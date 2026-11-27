@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Almacenamiento en memoria. Implementa los contratos de Domain y Application. -->
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BootcampCLTNoviembre.Application\BootcampCLTNoviembre.Application.csproj" />
+  </ItemGroup>
+</Project>

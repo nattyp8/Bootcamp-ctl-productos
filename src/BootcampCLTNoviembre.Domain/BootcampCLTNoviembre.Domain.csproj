@@ -1,0 +1,3 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Nucleo: entidades y reglas de negocio puras. SIN dependencias de paquetes ni de otros proyectos. -->
+</Project>

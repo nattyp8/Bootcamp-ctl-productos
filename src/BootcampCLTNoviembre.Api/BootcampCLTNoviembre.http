@@ -1,0 +1,73 @@
+@baseUrl = http://localhost:5234
+@productId = 3
+
+### 1. Crear un producto (201). Si el id devuelto difiere, cambiá productId arriba.
+POST {{baseUrl}}/v1/api/products
+Content-Type: application/json
+
+{
+  "name": "Teclado mecánico",
+  "description": "Teclado USB",
+  "price": 79.90,
+  "stock": 5
+}
+
+### 2. Consultar el producto creado (200)
+GET {{baseUrl}}/v1/api/products/{{productId}}
+
+### 3. Listar todos los productos (200)
+GET {{baseUrl}}/v1/api/products
+
+### 4. Filtrar por nombre sin distinguir mayúsculas (200)
+GET {{baseUrl}}/v1/api/products?search=NOTEBOOK
+
+### 5. Reemplazar los datos (200)
+PUT {{baseUrl}}/v1/api/products/{{productId}}
+Content-Type: application/json
+
+{
+  "name": "Teclado mecánico compacto",
+  "description": "Teclado USB de 75%",
+  "price": 89.90,
+  "stock": 8
+}
+
+### 6. Cambiar únicamente el stock (200)
+PATCH {{baseUrl}}/v1/api/products/{{productId}}
+Content-Type: application/json
+
+{
+  "stock": 2
+}
+
+### 7. Intentar un PATCH sin campos (400)
+PATCH {{baseUrl}}/v1/api/products/{{productId}}
+Content-Type: application/json
+
+{}
+
+### 8. Intentar crear un producto inválido (400)
+POST {{baseUrl}}/v1/api/products
+Content-Type: application/json
+
+{
+  "name": "",
+  "price": -10,
+  "stock": -1
+}
+
+### 9. Intentar duplicar el nombre de un producto inicial (400)
+POST {{baseUrl}}/v1/api/products
+Content-Type: application/json
+
+{
+  "name": "  moUSE  ",
+  "price": 20,
+  "stock": 1
+}
+
+### 10. Eliminar el producto de práctica (204)
+DELETE {{baseUrl}}/v1/api/products/{{productId}}
+
+### 11. Volver a consultar el producto eliminado (404)
+GET {{baseUrl}}/v1/api/products/{{productId}}

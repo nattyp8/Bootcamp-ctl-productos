@@ -1,0 +1,15 @@
+<Project>
+  <!-- Central Package Management: las versiones se definen una sola vez aqui; los .csproj no llevan Version. -->
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Web -->
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.15" />
+    <PackageVersion Include="Scalar.AspNetCore" Version="2.20.0" />
+    <!-- Application (logging del pipeline) -->
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0" />
+    <!-- Validacion -->
+    <PackageVersion Include="FluentValidation.DependencyInjectionExtensions" Version="12.2.0" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <!-- Presentacion (Minimal API) + Composition Root: el unico lugar que conoce todas las capas para cablear DI. -->
+  <PropertyGroup>
+    <RootNamespace>BootcampCLTNoviembre.Api</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Scalar.AspNetCore" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BootcampCLTNoviembre.Application\BootcampCLTNoviembre.Application.csproj" />
+    <ProjectReference Include="..\BootcampCLTNoviembre.Infrastructure\BootcampCLTNoviembre.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
